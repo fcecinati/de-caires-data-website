@@ -486,8 +486,34 @@ p {
 /* ---- Case study / portfolio cards ---- */
 .cases {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-m);
+}
+
+.case-card__media {
+  display: block;
+  overflow: hidden;
+}
+
+.case-card__media img {
+  transition: transform 0.4s ease;
+}
+
+.case-card__media:hover img {
+  transform: scale(1.04);
+}
+
+.case-card__link {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--color-accent);
+  text-decoration: none;
+  margin-top: auto;
+}
+
+.case-card__link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .case-card {
@@ -575,6 +601,10 @@ p {
   padding-left: 1.4rem;
   position: relative;
   color: var(--color-ink-soft);
+}
+
+.credentials + .button {
+  margin-top: var(--space-m);
 }
 
 .credentials__item::before {
