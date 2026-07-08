@@ -1,8 +1,9 @@
 /* Opotus: i18next setup and translations.
    All translations are embedded here so the site works on any static host.
-   English is the default language; the choice is saved to localStorage.
-   Domain-based detection (.it defaults to Italian) will be added once
-   the domains are registered.
+   Default language is picked from the domain (opotus.it -> Italian,
+   everything else, including opotus.com, defaults to English); a manual
+   EN | IT toggle in the nav overrides that and is remembered via
+   localStorage for later visits.
    NOTE: the Italian strings are drafts for Francesca to review. */
 
 (function () {
@@ -375,6 +376,11 @@
     }
   }
 
+  function domainDefaultLanguage() {
+    var host = window.location.hostname || '';
+    return /\.it$/i.test(host) ? 'it' : 'en';
+  }
+
   function applyTranslations() {
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
       el.textContent = i18next.t(el.getAttribute('data-i18n'));
@@ -400,7 +406,7 @@
 
   i18next.init(
     {
-      lng: savedLanguage() || 'en',
+      lng: savedLanguage() || domainDefaultLanguage(),
       fallbackLng: 'en',
       resources: resources
     },
