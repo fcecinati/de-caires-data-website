@@ -34,8 +34,8 @@ a {
   --color-ink-soft: #5b6169;
   --color-bg: #ffffff;
   --color-surface: #ffffff;
-  --color-coral: #ff6f91;
-  --color-coral-dark: #d85e7b;
+  --color-coral: #ff6f61;
+  --color-coral-dark: #d85e52;
   --color-gold: #f2b760;
   --color-gold-dark: #c6964f;
   --color-accent: var(--color-coral);
@@ -150,6 +150,10 @@ p {
   color: var(--color-gold);
 }
 
+.dot-gold {
+  color: var(--color-gold);
+}
+
 .section__title {
   margin-bottom: var(--space-s);
 }
@@ -162,7 +166,7 @@ p {
 .divider {
   width: 3.5rem;
   height: 2px;
-  background: var(--color-accent);
+  background: var(--color-gold);
   border: none;
   margin: 1.25rem 0;
 }
@@ -308,45 +312,51 @@ p {
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-/* ---- Hero (homepage): dark ink, where the mark reads best ---- */
+/* ---- Hero (homepage): dark ink, near-full-width logo as the centrepiece ---- */
 .hero {
-  padding: calc(var(--space-l) + 4rem) 0 var(--space-l);
+  padding: calc(var(--space-l) + 1rem) 0 var(--space-l);
   background: var(--color-ink);
+  text-align: center;
 }
 
 .hero__inner {
-  max-width: 48rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero__brand {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 1.25rem;
-  margin-bottom: 2rem;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .hero__brand-logo {
-  width: 150px;
-  height: 150px;
+  width: clamp(240px, 55vw, 640px);
+  height: auto;
+  aspect-ratio: 1 / 1;
 }
 
 .hero__brand .wordmark {
-  font-size: 2.75rem;
+  font-size: clamp(2.5rem, 2rem + 3vw, 4.5rem);
 }
 
 .hero h1 {
   color: var(--color-surface);
-}
-
-.hero__tagline {
-  font-size: clamp(1.05rem, 1rem + 0.4vw, 1.25rem);
-  margin: 1.25rem 0 2rem;
-  max-width: 40rem;
-  color: var(--color-footer-ink);
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: clamp(1.1rem, 1rem + 0.6vw, 1.4rem);
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  max-width: 34rem;
+  margin-bottom: 2rem;
 }
 
 .hero__actions {
   display: flex;
+  justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
 }
@@ -389,7 +399,7 @@ p {
 .service-card__icon {
   width: 2.4rem;
   height: 2.4rem;
-  color: var(--color-accent);
+  color: var(--color-gold);
 }
 
 .service-card__text {
@@ -457,8 +467,8 @@ p {
   content: counter(step);
   font-family: var(--font-heading);
   font-size: 1.2rem;
-  color: var(--color-accent);
-  border: 1.5px solid var(--color-accent);
+  color: var(--color-gold);
+  border: 1.5px solid var(--color-gold);
   border-radius: 50%;
   width: 2.4rem;
   height: 2.4rem;
