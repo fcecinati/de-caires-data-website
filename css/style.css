@@ -26,22 +26,24 @@ a {
   color: inherit;
 }
 
-/* ---- Design tokens ---- */
+/* ---- Design tokens ----
+   Palette is deliberately narrow: coral, gold (sampled from the logo
+   file itself, #F2B760), white, and an off-black slate. No brown/tan. */
 :root {
-  --color-ink: #1a0f08;
-  --color-ink-soft: #5a4a3d;
-  --color-bg: #ece6dd;
-  --color-surface: #fbf4eb;
-  --color-coral: #ff6b3d;
-  --color-coral-dark: #e5562c;
-  --color-gold: #d4a23a;
-  --color-gold-light: #e8c46a;
+  --color-ink: #1a1c1f;
+  --color-ink-soft: #5b6169;
+  --color-bg: #ffffff;
+  --color-surface: #ffffff;
+  --color-coral: #ff6f91;
+  --color-coral-dark: #d85e7b;
+  --color-gold: #f2b760;
+  --color-gold-dark: #c6964f;
   --color-accent: var(--color-coral);
   --color-accent-dark: var(--color-coral-dark);
-  --color-accent-soft: #f1e8da;
-  --color-line: #ddd2c2;
+  --color-accent-soft: #fff1f4;
+  --color-line: #e7e7ea;
   --color-footer: var(--color-ink);
-  --color-footer-ink: #cabfae;
+  --color-footer-ink: #b7bbc1;
 
   --font-display: 'Jost', sans-serif;
   --font-heading: var(--font-display);
@@ -213,7 +215,7 @@ p {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(251, 244, 235, 0.92);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   transition: box-shadow 0.3s ease;
@@ -319,17 +321,17 @@ p {
 .hero__brand {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
-  margin-bottom: 1.75rem;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
 }
 
 .hero__brand-logo {
-  width: 64px;
-  height: 64px;
+  width: 150px;
+  height: 150px;
 }
 
 .hero__brand .wordmark {
-  font-size: 2rem;
+  font-size: 2.75rem;
 }
 
 .hero h1 {
@@ -380,7 +382,7 @@ p {
 }
 
 .service-card:hover {
-  box-shadow: 0 10px 30px rgba(26, 15, 8, 0.08);
+  box-shadow: 0 10px 30px rgba(26, 28, 31, 0.08);
   transform: translateY(-3px);
 }
 
@@ -624,7 +626,7 @@ p {
 
 .contact-link:hover {
   border-color: var(--color-accent);
-  box-shadow: 0 4px 14px rgba(26, 15, 8, 0.06);
+  box-shadow: 0 4px 14px rgba(26, 28, 31, 0.06);
 }
 
 .contact-link__icon {
@@ -768,7 +770,7 @@ p {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   padding-top: var(--space-s);
   font-size: 0.82rem;
-  color: rgba(202, 191, 174, 0.7);
+  color: rgba(183, 187, 193, 0.7);
 }
 
 /* ---- Responsive ---- */
@@ -809,7 +811,7 @@ p {
     left: 0;
     right: 0;
     background: var(--color-surface);
-    box-shadow: 0 12px 20px rgba(26, 15, 8, 0.08);
+    box-shadow: 0 12px 20px rgba(26, 28, 31, 0.08);
     flex-direction: column;
     align-items: flex-start;
     gap: 0;
