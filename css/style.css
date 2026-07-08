@@ -5,7 +5,7 @@
    one-block change.
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&family=DM+Sans:wght@300;400;500;600;700&family=Instrument+Sans:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=DM+Sans:wght@300;400;500;600;700&family=Instrument+Sans:wght@400;500;600&display=swap');
 
 /* ---- Minimal reset ---- */
 *,
@@ -43,7 +43,7 @@ a {
   --color-footer: var(--color-ink);
   --color-footer-ink: #cabfae;
 
-  --font-display: 'Climate Crisis', sans-serif;
+  --font-display: 'Jost', sans-serif;
   --font-heading: var(--font-display);
   --font-body: 'DM Sans', 'Segoe UI', sans-serif;
   --font-label: 'Instrument Sans', 'Segoe UI', sans-serif;
@@ -72,7 +72,7 @@ body {
 h1,
 h2 {
   font-family: var(--font-heading);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.1;
   letter-spacing: 0.01em;
   color: var(--color-ink);
@@ -131,7 +131,7 @@ p {
   font-family: var(--font-display);
   font-weight: 400;
   line-height: 1;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.03em;
   color: var(--color-ink);
   text-decoration: none;
 }
@@ -324,8 +324,8 @@ p {
 }
 
 .hero__brand-logo {
-  width: 56px;
-  height: 56px;
+  width: 64px;
+  height: 64px;
 }
 
 .hero__brand .wordmark {

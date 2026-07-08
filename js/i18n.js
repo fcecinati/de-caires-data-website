@@ -153,7 +153,6 @@
           cred2: 'Peer-reviewed publications in international journals',
           cred3: 'Years of applied experience across research and industry',
           cred4: 'Bilingual: English and Italian',
-          photoAlt: 'Photo coming soon',
           ctaTitle: 'Curious whether we can help?',
           ctaText: 'The quickest way to find out is to ask. We reply personally, and honestly.',
           ctaButton: 'Get in touch'
@@ -328,7 +327,6 @@
           cred2: 'Pubblicazioni peer-reviewed su riviste internazionali',
           cred3: 'Anni di esperienza applicata tra ricerca e industria',
           cred4: 'Bilingue: inglese e italiano',
-          photoAlt: 'Foto in arrivo',
           ctaTitle: 'Vuoi sapere se possiamo aiutarti?',
           ctaText: 'Il modo più rapido per scoprirlo è chiedere. Rispondiamo personalmente, e con onestà.',
           ctaButton: 'Contattaci'

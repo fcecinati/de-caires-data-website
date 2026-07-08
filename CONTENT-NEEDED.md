@@ -3,9 +3,10 @@
 Running list of material still required to finish the site. Tick items off as they arrive.
 
 ## Branding
-- [x] Colours, fonts and voice applied from the brand board (coral/gold/ink/cream palette; Climate Crisis, DM Sans, Instrument Sans)
-- [ ] **Logo file as an actual file, not pasted inline.** The brand board's octopus-spiral icon is embedded as a ~50,000-character base64 string, which is too long to retype reliably by hand from a pasted document; the one attempt produced a corrupted image. Please drop the logo as a real file into `images/` (PNG with transparency, or ideally an SVG/source file) so it can be read directly. Until then, the site uses a text-only wordmark (no icon) in the nav, hero and footer.
-- [ ] Once the logo file is in, add it to the nav lockup, hero, footer, and as a favicon. Per the brand board's own critique, the mark loses its outer ring below ~64px, so a simplified icon-only version may be worth asking for alongside the full mark, specifically for favicon/small-icon use.
+- [x] Colours applied from the brand board (coral/gold/ink/cream palette)
+- [x] Logo (`images/opotus-logo.png`) wired into the hero, footer and favicon on all six pages. Left out of the nav specifically, since the brand board's own critique notes the outer ring disappears below ~64px and the nav bar only has room for it much smaller.
+- [x] Wordmark/heading font set to Jost (Google Fonts), a slim geometric sans, replacing the placeholder Climate Crisis pull from the brand board's own CDN link, which turned out to be a heavy protest/display face, not what was wanted
+- [ ] Optional: a simplified icon-only version of the logo for favicon/small-icon use, since the full mark softens below ~64px (the current favicon just uses the full PNG downscaled, which is a normal, minor trade-off)
 
 ## Copy and facts
 - [ ] Review of the one-line value proposition on the homepage
@@ -22,7 +23,9 @@ Running list of material still required to finish the site. Tick items off as th
 - [ ] WhatsApp number for the wa.me link
 
 ## Images
-- [ ] Photo of Francesca for the About page
+- [x] Photo of Francesca for the About page (`images/francesca.png`)
+- [ ] Portfolio screenshot(s) of De Caires Classics (and any other sites) for the digital.html "Recent work" cards
+- [ ] Optional: sector/project photos for the water and consulting pages, if you want something more concrete than the current text-only layout there
 - [ ] Any project or sector photos (drop originals in images/Raw/)
 
 ## Italian
