@@ -40,7 +40,7 @@ a {
   --color-gold-dark: #c6964f;
   --color-accent: var(--color-coral);
   --color-accent-dark: var(--color-coral-dark);
-  --color-accent-soft: #fff1f4;
+  --color-accent-soft: #fff3ee;
   --color-line: #e7e7ea;
   --color-footer: var(--color-ink);
   --color-footer-ink: #b7bbc1;
@@ -327,20 +327,21 @@ p {
 
 .hero__brand {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  gap: clamp(0.5rem, 2vw, 1.25rem);
   margin-bottom: 1.5rem;
 }
 
 .hero__brand-logo {
-  width: clamp(240px, 55vw, 640px);
+  width: clamp(88px, 16vw, 168px);
   height: auto;
   aspect-ratio: 1 / 1;
 }
 
 .hero__brand .wordmark {
-  font-size: clamp(2.5rem, 2rem + 3vw, 4.5rem);
+  font-size: clamp(3rem, 2.2rem + 4.5vw, 6rem);
 }
 
 .hero h1 {
