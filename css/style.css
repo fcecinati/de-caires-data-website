@@ -1,11 +1,16 @@
 /* ==========================================================================
-   Opotus: single stylesheet
-   Design tokens taken from the Opotus brand board (logo, colours, fonts).
-   Everything visual derives from :root, so future brand tweaks are a
-   one-block change.
+   De Caires Data — single stylesheet
+   ==========================================================================
+   The De Caires house style, inverted: where De Caires Classics is cream and
+   gold on black, this side of the brand is black and gold on white. Same
+   typography (Cormorant Garamond + DM Sans), same gold hairlines, same
+   generous vertical rhythm — so the two sites read as one company.
+
+   Everything visual derives from :root, so brand tweaks are a one-block
+   change.
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=DM+Sans:wght@300;400;500;600;700&family=Instrument+Sans:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@400;500&display=swap');
 
 /* ---- Minimal reset ---- */
 *,
@@ -27,44 +32,45 @@ a {
 }
 
 /* ---- Design tokens ----
-   Palette is deliberately narrow: coral, gold (sampled from the logo
-   file itself, #F2B760), white, and an off-black slate. No brown/tan. */
+   Palette inverted from the Classics board: the cream that was the text
+   colour there is the tint band here, and the near-black that was the
+   ground is the ink. Gold is unchanged as a hairline/rule colour; a deeper
+   bronze (--color-gold-ink) carries gold *text*, since #B8960C is too light
+   to sit legibly on white. */
 :root {
-  --color-ink: #1a1c1f;
-  --color-ink-soft: #5b6169;
+  --color-ink: #0A0A0A;
+  --color-ink-soft: #4A4A4A;
   --color-bg: #ffffff;
   --color-surface: #ffffff;
-  --color-coral: #ff6f61;
-  --color-coral-dark: #d85e52;
-  --color-gold: #f2b760;
-  --color-gold-dark: #c6964f;
-  --color-accent: var(--color-coral);
-  --color-accent-dark: var(--color-coral-dark);
-  --color-accent-soft: #fff3ee;
-  --color-line: #e7e7ea;
-  --color-footer: var(--color-ink);
-  --color-footer-ink: #b7bbc1;
+  --color-cream: #F5F0E8;
+  --color-gold: #B8960C;
+  --color-gold-ink: #7E6400;
+  --color-gold-deep: #8A6F00;
+  --color-line: rgba(184, 150, 12, 0.22);
+  --color-line-soft: rgba(10, 10, 10, 0.08);
 
-  --font-display: 'Jost', sans-serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-heading: var(--font-display);
-  --font-body: 'DM Sans', 'Segoe UI', sans-serif;
-  --font-label: 'Instrument Sans', 'Segoe UI', sans-serif;
+  --font-body: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-label: var(--font-body);
 
-  --max-width: 1100px;
+  --max-width: 1160px;
   --space-s: clamp(0.75rem, 2vw, 1rem);
   --space-m: clamp(1.5rem, 4vw, 2.5rem);
-  --space-l: clamp(3rem, 8vw, 5.5rem);
-  --radius: 6px;
+  --space-l: clamp(4rem, 9vw, 7.5rem);
+  --radius: 0;
 }
 
 /* ---- Base ---- */
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
   font-family: var(--font-body);
-  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.0625rem);
+  font-weight: 400;
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
   line-height: 1.65;
   color: var(--color-ink);
   background: var(--color-bg);
@@ -72,31 +78,27 @@ body {
 }
 
 h1,
-h2 {
-  font-family: var(--font-heading);
-  font-weight: 500;
-  line-height: 1.1;
-  letter-spacing: 0.01em;
-  color: var(--color-ink);
-}
-
-h3 {
-  font-family: var(--font-body);
-  font-weight: 700;
-  line-height: 1.3;
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
   color: var(--color-ink);
 }
 
 h1 {
-  font-size: clamp(2.4rem, 1.7rem + 3.4vw, 4rem);
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
 }
 
 h2 {
-  font-size: clamp(1.8rem, 1.4rem + 1.8vw, 2.6rem);
+  font-size: clamp(1.9rem, 4vw, 3.2rem);
 }
 
 h3 {
-  font-size: clamp(1.1rem, 1.02rem + 0.4vw, 1.3rem);
+  font-size: clamp(1.3rem, 2.2vw, 1.75rem);
+  line-height: 1.25;
 }
 
 p {
@@ -113,45 +115,23 @@ p {
   padding: var(--space-l) 0;
 }
 
+/* Cream band: the warm counterweight to the white ground, fenced by gold
+   hairlines the way Classics fences its sections. */
 .section--tint {
-  background: var(--color-accent-soft);
+  background: var(--color-cream);
+  border-top: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-line);
 }
 
 .section__kicker {
   display: block;
   font-family: var(--font-label);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-coral);
+  color: var(--color-gold-ink);
   margin-bottom: 0.75rem;
-}
-
-/* ---- Wordmark (logo lockup, text-based per brand board) ---- */
-.wordmark {
-  font-family: var(--font-display);
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: 0.03em;
-  color: var(--color-ink);
-  text-decoration: none;
-}
-
-.wordmark--light {
-  color: var(--color-surface);
-}
-
-.wordmark__mid {
-  color: var(--color-coral);
-}
-
-.wordmark__dot {
-  color: var(--color-gold);
-}
-
-.dot-gold {
-  color: var(--color-gold);
 }
 
 .section__title {
@@ -161,11 +141,17 @@ p {
 .section__intro {
   max-width: 46rem;
   margin-bottom: var(--space-m);
+  color: var(--color-ink-soft);
+  line-height: 1.85;
+}
+
+.dot-gold {
+  color: var(--color-gold-ink);
 }
 
 .divider {
-  width: 3.5rem;
-  height: 2px;
+  width: 2.5rem;
+  height: 1px;
   background: var(--color-gold);
   border: none;
   margin: 1.25rem 0;
@@ -176,64 +162,76 @@ p {
   margin-right: auto;
 }
 
-/* ---- Buttons ---- */
+/* ---- Buttons ----
+   Squared off, hairline-bordered, uppercase micro-type: the Classics
+   treatment, with gold reading as ink rather than as glow. */
 .button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.95rem;
-  letter-spacing: 0.02em;
+  font-weight: 500;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   text-decoration: none;
-  padding: 0.8rem 1.8rem;
+  padding: 0.9rem 1.75rem;
   border-radius: var(--radius);
-  border: 1.5px solid var(--color-accent);
-  transition: background 0.25s ease, color 0.25s ease;
+  border: 1px solid var(--color-gold);
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
   cursor: pointer;
 }
 
 .button--solid {
-  background: var(--color-accent);
+  background: var(--color-gold);
   color: var(--color-ink);
+  border-color: var(--color-gold);
 }
 
 .button--solid:hover {
-  background: var(--color-accent-dark);
-  border-color: var(--color-accent-dark);
-  color: var(--color-surface);
+  background: var(--color-ink);
+  border-color: var(--color-ink);
+  color: var(--color-cream);
 }
 
 .button--ghost {
   background: transparent;
-  color: var(--color-accent);
+  color: var(--color-gold-ink);
+  border-color: rgba(184, 150, 12, 0.55);
 }
 
 .button--ghost:hover {
-  background: var(--color-accent);
+  background: var(--color-gold);
+  border-color: var(--color-gold);
   color: var(--color-ink);
 }
 
-/* ---- Navigation ---- */
+/* ---- Navigation ----
+   Transparent over the white hero, then a solid pane with a gold hairline
+   once the page moves — mirroring the Classics nav exactly. */
 .nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transition: box-shadow 0.3s ease;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.3s ease;
 }
 
 .nav--scrolled,
 .nav--open {
-  box-shadow: 0 1px 0 var(--color-line);
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom-color: var(--color-line);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .nav__inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0.9rem var(--space-m);
+  padding: 0.85rem var(--space-m);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -241,32 +239,53 @@ p {
 }
 
 .nav__brand {
-  font-size: 1.6rem;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
 }
 
 .nav__brand-logo {
-  height: 2.2rem;
+  height: clamp(1.9rem, 3.4vw, 2.4rem);
   width: auto;
 }
 
 .nav__links {
   display: flex;
   align-items: center;
-  gap: 1.6rem;
+  gap: 2.2rem;
   list-style: none;
 }
 
 .nav__link {
-  font-size: 0.92rem;
+  position: relative;
+  font-size: 0.78rem;
   font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   text-decoration: none;
-  color: var(--color-ink-soft);
+  color: rgba(10, 10, 10, 0.72);
   transition: color 0.2s ease;
+}
+
+.nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-gold);
+  transition: width 0.25s ease;
 }
 
 .nav__link:hover,
 .nav__link--active {
-  color: var(--color-accent);
+  color: var(--color-ink);
+}
+
+.nav__link:hover::after,
+.nav__link--active::after {
+  width: 100%;
 }
 
 .nav__lang {
@@ -274,8 +293,8 @@ p {
   align-items: center;
   gap: 0.35rem;
   font-family: var(--font-label);
-  font-size: 0.85rem;
-  color: var(--color-ink-soft);
+  font-size: 0.75rem;
+  color: rgba(10, 10, 10, 0.35);
 }
 
 .nav__lang-btn {
@@ -283,16 +302,22 @@ p {
   border: none;
   font: inherit;
   font-weight: 500;
-  color: var(--color-ink-soft);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(10, 10, 10, 0.55);
   cursor: pointer;
   padding: 0.15rem 0.2rem;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.nav__lang-btn:hover {
+  color: var(--color-ink);
 }
 
 .nav__lang-btn--active {
-  color: var(--color-accent);
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  color: var(--color-gold-ink);
+  font-weight: 500;
 }
 
 .nav__toggle {
@@ -306,17 +331,68 @@ p {
 .nav__toggle-bar {
   display: block;
   width: 22px;
-  height: 2px;
+  height: 1px;
   background: var(--color-ink);
-  margin: 5px 0;
+  margin: 6px 0;
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-/* ---- Hero (homepage): dark ink, near-full-width logo as the centrepiece ---- */
+/* ---- Hero (homepage): the wordmark as the centrepiece, on white ----
+   Behind it, a contour field (images/hero-contours.svg): nested isolines
+   banded warm-core-to-cool-edge, the way a rainfall or elevation map is
+   banded. Monoline, at the same stroke weight as the logo's script. */
 .hero {
-  padding: calc(var(--space-l) + 1rem) 0 var(--space-l);
-  background: var(--color-ink);
+  position: relative;
+  overflow: hidden;
+  min-height: clamp(30rem, 76vh, 46rem);
+  display: flex;
+  align-items: center;
+  padding: calc(var(--space-l) + 4rem) 0 var(--space-l);
+  background: var(--color-bg);
   text-align: center;
+}
+
+.hero > .wrap {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+/* Inset negatively so the drift animation never exposes a white edge. */
+.hero-art {
+  position: absolute;
+  inset: -5%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: hero-drift 34s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+/* A near-white wash over the centre: the wordmark is a very thin monoline,
+   and without this the contour crossings break up its strokes. */
+.hero-art::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 50% 44% at 50% 44%,
+    rgba(255, 255, 255, 0.90) 0%,
+    rgba(255, 255, 255, 0.74) 45%,
+    rgba(255, 255, 255, 0.34) 70%,
+    rgba(255, 255, 255, 0) 100%);
+}
+
+@keyframes hero-drift {
+  to { transform: translate3d(-26px, 14px, 0) scale(1.06); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-art img { animation: none; }
 }
 
 .hero__inner {
@@ -327,32 +403,27 @@ p {
 
 .hero__brand {
   display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: center;
-  gap: clamp(0.5rem, 2vw, 1.25rem);
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.25rem;
 }
 
-.hero__brand-logo {
-  width: clamp(88px, 16vw, 168px);
+.hero__logo {
+  width: min(560px, 84vw);
   height: auto;
-  aspect-ratio: 1 / 1;
 }
 
-.hero__brand .wordmark {
-  font-size: clamp(3rem, 2.2rem + 4.5vw, 6rem);
-}
-
+/* The value proposition, set the way the Classics tagline is set: display
+   serif, italic, quiet. */
 .hero h1 {
-  color: var(--color-surface);
-  font-family: var(--font-body);
-  font-weight: 400;
-  font-size: clamp(1.1rem, 1rem + 0.6vw, 1.4rem);
-  line-height: 1.5;
-  letter-spacing: 0.01em;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1.25rem, 2.6vw, 1.85rem);
+  line-height: 1.45;
+  letter-spacing: 0.03em;
+  color: var(--color-ink);
   max-width: 34rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .hero__actions {
@@ -365,58 +436,67 @@ p {
 /* ---- Page hero (inner pages) ---- */
 .page-hero {
   padding: calc(var(--space-l) + 3rem) 0 var(--space-m);
-  background: linear-gradient(180deg, var(--color-accent-soft) 0%, var(--color-bg) 100%);
+  background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-bg) 100%);
+  border-bottom: 1px solid var(--color-line);
 }
 
 .page-hero__intro {
   max-width: 44rem;
-  margin-top: 1rem;
-  font-size: 1.1rem;
+  margin-top: 1.25rem;
+  font-size: clamp(1rem, 1.8vw, 1.12rem);
+  line-height: 1.85;
+  color: var(--color-ink-soft);
 }
 
-/* ---- Service cards ---- */
+/* ---- Service cards ----
+   A hairline grid rather than floating boxes, as on the Classics services
+   section: the 1px gap over a gold-tinted background draws the rules. */
 .services {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-m);
+  gap: 1px;
+  background: var(--color-line);
+  border: 1px solid var(--color-line);
 }
 
 .service-card {
   background: var(--color-surface);
-  border: 1px solid var(--color-line);
   border-radius: var(--radius);
-  padding: 2rem 1.75rem;
+  padding: 2.5rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
-  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  transition: background 0.3s ease;
 }
 
 .service-card:hover {
-  box-shadow: 0 10px 30px rgba(26, 28, 31, 0.08);
-  transform: translateY(-3px);
+  background: #FBF9F5;
 }
 
 .service-card__icon {
-  width: 2.4rem;
-  height: 2.4rem;
-  color: var(--color-gold);
+  width: 2.2rem;
+  height: 2.2rem;
+  color: var(--color-gold-deep);
 }
 
 .service-card__text {
   flex: 1;
+  font-size: 0.92rem;
+  line-height: 1.8;
 }
 
 .service-card__link {
-  font-weight: 600;
-  font-size: 0.92rem;
-  color: var(--color-accent);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gold-ink);
   text-decoration: none;
+  transition: opacity 0.2s ease;
 }
 
 .service-card__link:hover {
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  opacity: 0.65;
 }
 
 /* ---- Credibility strip ---- */
@@ -428,24 +508,43 @@ p {
 }
 
 .stats__number {
-  font-family: var(--font-heading);
-  font-size: clamp(1.9rem, 1.5rem + 2vw, 2.8rem);
-  color: var(--color-gold);
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(2.6rem, 2rem + 2.6vw, 4rem);
+  line-height: 1;
+  color: var(--color-gold-ink);
+  margin-bottom: 0.4rem;
 }
 
 .stats__label {
-  font-size: 0.92rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  color: var(--color-ink-soft);
 }
 
 /* ---- Feature / offering lists ---- */
 .offerings {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-m);
+  gap: var(--space-m) var(--space-l);
 }
 
 .offering h3 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.offering h3::after {
+  content: '';
+  display: block;
+  width: 2rem;
+  height: 1px;
+  background: var(--color-gold);
+  margin-top: 0.75rem;
+}
+
+.offering p {
+  font-size: 0.95rem;
+  line-height: 1.8;
 }
 
 /* ---- Process steps ---- */
@@ -453,26 +552,27 @@ p {
   list-style: none;
   counter-reset: step;
   display: grid;
-  gap: 1.5rem;
-  max-width: 44rem;
+  gap: 1.75rem;
+  max-width: 46rem;
 }
 
 .steps__item {
   counter-increment: step;
   display: flex;
-  gap: 1.25rem;
+  gap: 1.5rem;
   align-items: flex-start;
 }
 
 .steps__item::before {
   content: counter(step);
-  font-family: var(--font-heading);
-  font-size: 1.2rem;
-  color: var(--color-gold);
-  border: 1.5px solid var(--color-gold);
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 1.3rem;
+  color: var(--color-gold-ink);
+  border: 1px solid var(--color-gold);
   border-radius: 50%;
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 2.6rem;
+  height: 2.6rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -480,7 +580,12 @@ p {
 }
 
 .steps__item h3 {
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.3rem;
+}
+
+.steps__item p {
+  font-size: 0.95rem;
+  line-height: 1.8;
 }
 
 /* ---- Case study / portfolio cards ---- */
@@ -488,32 +593,6 @@ p {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-m);
-}
-
-.case-card__media {
-  display: block;
-  overflow: hidden;
-}
-
-.case-card__media img {
-  transition: transform 0.4s ease;
-}
-
-.case-card__media:hover img {
-  transform: scale(1.04);
-}
-
-.case-card__link {
-  font-weight: 600;
-  font-size: 0.92rem;
-  color: var(--color-accent);
-  text-decoration: none;
-  margin-top: auto;
-}
-
-.case-card__link:hover {
-  text-decoration: underline;
-  text-underline-offset: 3px;
 }
 
 .case-card {
@@ -525,6 +604,21 @@ p {
   flex-direction: column;
 }
 
+.case-card__media {
+  display: block;
+  overflow: hidden;
+}
+
+.case-card__media img {
+  transition: transform 0.6s ease, filter 0.4s ease;
+  filter: saturate(0.8);
+}
+
+.case-card__media:hover img {
+  transform: scale(1.04);
+  filter: saturate(1);
+}
+
 .case-card__image {
   aspect-ratio: 16 / 10;
   object-fit: cover;
@@ -533,19 +627,19 @@ p {
 
 .case-card__image--placeholder {
   aspect-ratio: 16 / 10;
-  background: var(--color-accent-soft);
+  background: var(--color-cream);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--color-ink-soft);
   font-family: var(--font-label);
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
 .case-card__body {
-  padding: 1.5rem 1.5rem 1.75rem;
+  padding: 1.75rem 1.75rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
@@ -554,11 +648,27 @@ p {
 
 .case-card__tag {
   font-family: var(--font-label);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-coral);
+  color: var(--color-gold-ink);
+}
+
+.case-card__link {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gold-ink);
+  text-decoration: none;
+  margin-top: auto;
+  padding-top: 0.5rem;
+  transition: opacity 0.2s ease;
+}
+
+.case-card__link:hover {
+  opacity: 0.65;
 }
 
 /* ---- About ---- */
@@ -571,22 +681,25 @@ p {
 
 .about-grid__photo {
   border-radius: var(--radius);
+  border: 1px solid var(--color-line);
   aspect-ratio: 4 / 5;
   object-fit: cover;
   width: 100%;
+  filter: saturate(0.85);
 }
 
 .about-grid__photo--placeholder {
   border-radius: var(--radius);
+  border: 1px solid var(--color-line);
   aspect-ratio: 4 / 5;
-  background: var(--color-accent-soft);
+  background: var(--color-cream);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--color-ink-soft);
   font-family: var(--font-label);
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
@@ -598,43 +711,56 @@ p {
 }
 
 .credentials__item {
-  padding-left: 1.4rem;
+  padding-left: 1.5rem;
   position: relative;
   color: var(--color-ink-soft);
-}
-
-.credentials + .button {
-  margin-top: var(--space-m);
+  font-size: 0.95rem;
+  line-height: 1.8;
 }
 
 .credentials__item::before {
   content: '';
   position: absolute;
   left: 0;
-  top: 0.55em;
-  width: 0.55rem;
-  height: 0.55rem;
-  border-radius: 50%;
+  top: 0.8em;
+  width: 0.75rem;
+  height: 1px;
   background: var(--color-gold);
 }
 
-/* ---- CTA band: dark ink, matches hero/footer treatment ---- */
+.credentials + .button {
+  margin-top: var(--space-m);
+}
+
+/* ---- CTA band ----
+   Stays on the cream, not on black: the point of this side of the brand is
+   that the ink is dark and the ground is light. */
 .cta-band {
-  background: var(--color-ink);
-  color: var(--color-surface);
+  background: var(--color-cream);
+  border-top: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-line);
   text-align: center;
   padding: var(--space-l) 0;
 }
 
-.cta-band h2,
-.cta-band p {
-  color: var(--color-surface);
+.cta-band h2 {
+  color: var(--color-ink);
+}
+
+.cta-band h2::after {
+  content: '';
+  display: block;
+  width: 2.5rem;
+  height: 1px;
+  background: var(--color-gold);
+  margin: 1.25rem auto 0;
 }
 
 .cta-band p {
-  opacity: 0.8;
+  color: var(--color-ink-soft);
   max-width: 38rem;
-  margin: 0.75rem auto 1.75rem;
+  margin: 1.25rem auto 2rem;
+  line-height: 1.85;
 }
 
 /* ---- Contact ---- */
@@ -654,33 +780,37 @@ p {
 .contact-link {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 0.9rem;
   text-decoration: none;
   color: var(--color-ink);
+  font-size: 0.85rem;
   font-weight: 500;
-  padding: 0.9rem 1.1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 1rem 1.25rem;
   background: var(--color-surface);
   border: 1px solid var(--color-line);
   border-radius: var(--radius);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: background 0.25s ease, border-color 0.2s ease;
 }
 
 .contact-link:hover {
-  border-color: var(--color-accent);
-  box-shadow: 0 4px 14px rgba(26, 28, 31, 0.06);
+  background: var(--color-cream);
+  border-color: rgba(184, 150, 12, 0.5);
 }
 
 .contact-link__icon {
   width: 1.35rem;
   height: 1.35rem;
-  color: var(--color-accent);
+  color: var(--color-gold-deep);
   flex-shrink: 0;
 }
 
 .contact-note {
-  background: var(--color-accent-soft);
+  background: var(--color-cream);
   border-radius: var(--radius);
-  padding: 1.5rem 1.75rem;
+  border-left: 1px solid var(--color-gold);
+  padding: 1.75rem;
   margin-top: var(--space-m);
 }
 
@@ -688,26 +818,36 @@ p {
   margin-bottom: 0.5rem;
 }
 
+.contact-note p,
+.contact-note ul {
+  font-size: 0.93rem;
+  line-height: 1.8;
+}
+
 .contact-note ul {
   margin: 0.5rem 0 0 1.1rem;
   color: var(--color-ink-soft);
 }
 
-/* ---- Form ---- */
+/* ---- Form ----
+   Underlined fields rather than boxes, as on the Classics contact page. */
 .form {
   display: grid;
-  gap: 1.1rem;
+  gap: 1.6rem;
   background: var(--color-surface);
   border: 1px solid var(--color-line);
   border-radius: var(--radius);
-  padding: 2rem;
+  padding: 2.25rem;
 }
 
 .form__label {
-  font-size: 0.88rem;
-  font-weight: 600;
   display: block;
-  margin-bottom: 0.35rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-gold-ink);
+  margin-bottom: 0.5rem;
 }
 
 .form__input,
@@ -716,18 +856,29 @@ p {
   width: 100%;
   font: inherit;
   color: var(--color-ink);
-  padding: 0.7rem 0.9rem;
-  border: 1px solid var(--color-line);
-  border-radius: var(--radius);
-  background: var(--color-bg);
+  padding: 0.6rem 0;
+  border: none;
+  border-bottom: 1px solid rgba(184, 150, 12, 0.35);
+  border-radius: 0;
+  background: transparent;
+  transition: border-color 0.25s ease;
+  outline: none;
+  resize: none;
+}
+
+.form__input::placeholder,
+.form__textarea::placeholder {
+  color: rgba(10, 10, 10, 0.32);
 }
 
 .form__input:focus,
 .form__select:focus,
 .form__textarea:focus {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 1px;
-  border-color: var(--color-accent);
+  border-bottom-color: var(--color-gold);
+}
+
+.form__select {
+  padding-right: 1.5rem;
 }
 
 .form__textarea {
@@ -739,16 +890,19 @@ p {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  margin-top: 0.5rem;
 }
 
 .form__hint {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
+  color: var(--color-ink-soft);
 }
 
 /* ---- Footer ---- */
 .footer {
-  background: var(--color-footer);
-  color: var(--color-footer-ink);
+  background: var(--color-bg);
+  color: var(--color-ink-soft);
+  border-top: 1px solid var(--color-line);
   padding: var(--space-l) 0 var(--space-m);
 }
 
@@ -762,56 +916,54 @@ p {
 .footer__brand {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
-  margin-bottom: 0.9rem;
+  margin-bottom: 1.1rem;
 }
 
 .footer__brand-logo {
-  width: 40px;
-  height: 40px;
-}
-
-.footer__brand .wordmark {
-  font-size: 1.5rem;
+  height: 2.4rem;
+  width: auto;
 }
 
 .footer__text {
   font-size: 0.9rem;
-  color: var(--color-footer-ink);
+  line-height: 1.8;
+  color: var(--color-ink-soft);
   max-width: 24rem;
 }
 
 .footer__heading {
   font-family: var(--font-label);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--color-surface);
-  margin-bottom: 0.9rem;
+  color: var(--color-gold-ink);
+  margin-bottom: 1rem;
 }
 
 .footer__list {
   list-style: none;
   display: grid;
-  gap: 0.55rem;
+  gap: 0.6rem;
 }
 
 .footer__link {
-  font-size: 0.92rem;
-  color: var(--color-footer-ink);
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .footer__link:hover {
-  color: #ffffff;
+  color: var(--color-ink);
 }
 
 .footer__legal {
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid var(--color-line-soft);
   padding-top: var(--space-s);
-  font-size: 0.82rem;
-  color: rgba(183, 187, 193, 0.7);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: rgba(10, 10, 10, 0.45);
 }
 
 /* ---- Responsive ---- */
@@ -824,7 +976,7 @@ p {
   }
 
   .stats {
-    gap: 1.5rem;
+    gap: 2.5rem;
   }
 
   .about-grid,
@@ -840,6 +992,7 @@ p {
 
   .footer__grid {
     grid-template-columns: 1fr;
+    gap: var(--space-m);
   }
 
   .nav__toggle {
@@ -852,7 +1005,8 @@ p {
     left: 0;
     right: 0;
     background: var(--color-surface);
-    box-shadow: 0 12px 20px rgba(26, 28, 31, 0.08);
+    border-bottom: 1px solid var(--color-line);
+    box-shadow: 0 12px 20px rgba(10, 10, 10, 0.06);
     flex-direction: column;
     align-items: flex-start;
     gap: 0;
@@ -866,16 +1020,29 @@ p {
 
   .nav__links > li {
     width: 100%;
+    border-bottom: 1px solid var(--color-line-soft);
+  }
+
+  .nav__links > li:last-child {
+    border-bottom: none;
   }
 
   .nav__link {
     display: block;
-    padding: 0.7rem var(--space-m);
-    font-size: 1rem;
+    padding: 0.9rem var(--space-m);
+    font-size: 0.85rem;
+  }
+
+  .nav__link::after {
+    display: none;
   }
 
   .nav__lang {
-    padding: 0.7rem var(--space-m);
+    padding: 0.9rem var(--space-m);
+  }
+
+  .nav__lang-btn {
+    font-size: 0.85rem;
   }
 
   .nav--open .nav__toggle-bar:nth-child(1) {
@@ -888,5 +1055,21 @@ p {
 
   .nav--open .nav__toggle-bar:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .form {
+    padding: 1.75rem 1.35rem;
+  }
+
+  .hero__actions,
+  .form__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .button {
+    justify-content: center;
   }
 }

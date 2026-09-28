@@ -1,7 +1,7 @@
-/* Opotus: i18next setup and translations.
+/* De Caires Data: i18next setup and translations.
    All translations are embedded here so the site works on any static host.
-   Default language is picked from the domain (opotus.it -> Italian,
-   everything else, including opotus.com, defaults to English); a manual
+   Default language is picked from the domain (decairesdata.it -> Italian,
+   everything else, including decairesdata.com, defaults to English); a manual
    EN | IT toggle in the nav overrides that and is remembered via
    localStorage for later visits.
    NOTE: the Italian strings are drafts for Francesca to review. */
@@ -27,7 +27,7 @@
           text: 'Data science and AI services: consulting, water sector analytics, and AI-enabled digital presence.',
           explore: 'Explore',
           contact: 'Contact',
-          legal: '© 2026 Opotus. All rights reserved.'
+          legal: '© 2026 De Caires Data. All rights reserved.'
         },
         home: {
           heroTitle: 'Data science and AI, applied where it matters',
@@ -45,9 +45,9 @@
           stat1: 'years in data science',
           stat2: 'peer-reviewed publications',
           stat3: 'countries, one studio: UK and Italy',
-          aboutKicker: 'Behind Opotus',
+          aboutKicker: 'Behind De Caires Data',
           aboutTitle: 'A company with a face',
-          aboutText: 'Opotus is led by Francesca Cecinati, a data scientist with a research background in the water sector and years of experience turning complex data into practical answers. Every project gets her direct attention, supported by modern AI tools.',
+          aboutText: 'De Caires Data is led by Francesca Cecinati, a data scientist with a research background in the water sector and years of experience turning complex data into practical answers. Every project gets her direct attention, supported by modern AI tools.',
           aboutCta: 'Meet Francesca',
           ctaTitle: 'Have a project in mind?',
           ctaText: 'Tell us where data could work harder for you, and we will suggest a way forward. No jargon, no obligation.',
@@ -89,7 +89,7 @@
         water: {
           kicker: 'Water',
           title: 'Data science for the water industry',
-          intro: 'Water data is unforgiving: noisy sensors, sparse records, real consequences. Opotus brings a research-grade approach shaped by years of academic and industry work in the water sector.',
+          intro: 'Water data is unforgiving: noisy sensors, sparse records, real consequences. De Caires Data brings a research-grade approach shaped by years of academic and industry work in the water sector.',
           offeringsTitle: 'What we offer',
           off1Title: 'Hydrological and environmental analysis',
           off1Text: 'Rainfall, flow and quality data analysed with methods that respect their physical meaning, not just their statistics.',
@@ -99,9 +99,9 @@
           off3Text: 'Making sense of asset registers, telemetry and network data: condition, performance, leakage and investment insight.',
           off4Title: 'Research and innovation support',
           off4Text: 'Support for R&D projects, bids and publications, bridging the gap between academic methods and operational reality.',
-          credKicker: 'Why Opotus',
+          credKicker: 'Why De Caires Data',
           credTitle: 'Grounded in research, tested in industry',
-          credText: 'Opotus is led by Francesca Cecinati, whose peer-reviewed research on rainfall data and uncertainty in the water sector has been published in international journals, and who has spent years applying those methods inside the industry itself.',
+          credText: 'De Caires Data is led by Francesca Cecinati, whose peer-reviewed research on rainfall data and uncertainty in the water sector has been published in international journals, and who has spent years applying those methods inside the industry itself.',
           cred1: 'Over 30 peer-reviewed publications in international water and environmental journals',
           cred2: '8 years of applied experience with water utilities and sector consultancies',
           cred3: 'Specialist expertise in rainfall data, uncertainty and hydrological modelling',
@@ -145,12 +145,12 @@
         },
         about: {
           kicker: 'About',
-          title: 'The person behind Opotus',
-          intro: 'Opotus is a data science and AI studio with one guiding idea: advanced methods are only useful when someone takes the time to apply them properly to your specific problem.',
+          title: 'The person behind De Caires Data',
+          intro: 'De Caires Data is a data science and AI studio with one guiding idea: advanced methods are only useful when someone takes the time to apply them properly to your specific problem.',
           bioTitle: 'Francesca Cecinati',
           bio1: 'Francesca is a data scientist whose career spans academic research and industry practice. Her peer-reviewed work on data and uncertainty in the water sector has been published in international journals, and she has spent years turning research-grade methods into answers organisations can act on.',
-          bio2: 'Opotus brings that same rigour to a wider range of problems: AI strategy and machine learning for organisations of any sector, specialist analytics for water, and AI-enabled websites and marketing for small businesses. Different audiences, one standard of care.',
-          bio3: 'Francesca works in English and Italian, and every Opotus project, whatever its size, gets her direct attention.',
+          bio2: 'De Caires Data brings that same rigour to a wider range of problems: AI strategy and machine learning for organisations of any sector, specialist analytics for water, and AI-enabled websites and marketing for small businesses. Different audiences, one standard of care.',
+          bio3: 'Francesca works in English and Italian, and every De Caires Data project, whatever its size, gets her direct attention.',
           credTitle: 'Credentials at a glance',
           cred1: 'PhD-level research background in water sector data science',
           cred2: 'Peer-reviewed publications in international journals',
@@ -203,7 +203,7 @@
           text: "Servizi di data science e AI: consulenza, analisi per il settore idrico e presenza digitale potenziata dall'AI.",
           explore: 'Esplora',
           contact: 'Contatti',
-          legal: '© 2026 Opotus. Tutti i diritti riservati.'
+          legal: '© 2026 De Caires Data. Tutti i diritti riservati.'
         },
         home: {
           heroTitle: 'Data science e AI, applicate dove contano',
@@ -221,9 +221,9 @@
           stat1: 'anni di data science',
           stat2: 'pubblicazioni scientifiche',
           stat3: 'paesi, uno studio: Regno Unito e Italia',
-          aboutKicker: 'Dietro Opotus',
+          aboutKicker: 'Dietro De Caires Data',
           aboutTitle: "Un'azienda con un volto",
-          aboutText: "Opotus è guidata da Francesca Cecinati, data scientist con un background di ricerca nel settore idrico e anni di esperienza nel trasformare dati complessi in risposte concrete. Ogni progetto riceve la sua attenzione diretta, con il supporto dei moderni strumenti di AI.",
+          aboutText: "De Caires Data è guidata da Francesca Cecinati, data scientist con un background di ricerca nel settore idrico e anni di esperienza nel trasformare dati complessi in risposte concrete. Ogni progetto riceve la sua attenzione diretta, con il supporto dei moderni strumenti di AI.",
           aboutCta: 'Conosci Francesca',
           ctaTitle: 'Hai un progetto in mente?',
           ctaText: 'Raccontaci dove i tuoi dati potrebbero lavorare di più per te e ti proporremo un percorso. Senza tecnicismi e senza impegno.',
@@ -265,7 +265,7 @@
         water: {
           kicker: 'Acqua',
           title: 'Data science per il settore idrico',
-          intro: 'I dati del settore idrico non perdonano: sensori rumorosi, serie incomplete, conseguenze reali. Opotus porta un approccio di livello scientifico, maturato in anni di lavoro accademico e industriale nel settore.',
+          intro: 'I dati del settore idrico non perdonano: sensori rumorosi, serie incomplete, conseguenze reali. De Caires Data porta un approccio di livello scientifico, maturato in anni di lavoro accademico e industriale nel settore.',
           offeringsTitle: 'Cosa offriamo',
           off1Title: 'Analisi idrologiche e ambientali',
           off1Text: 'Dati di pioggia, portata e qualità analizzati con metodi che ne rispettano il significato fisico, non solo le statistiche.',
@@ -275,9 +275,9 @@
           off3Text: 'Dare senso a registri degli asset, telemetria e dati di rete: condizione, prestazioni, perdite e scelte di investimento.',
           off4Title: 'Supporto a ricerca e innovazione',
           off4Text: 'Supporto a progetti di R&S, bandi e pubblicazioni, facendo da ponte tra metodi accademici e realtà operativa.',
-          credKicker: 'Perché Opotus',
+          credKicker: 'Perché De Caires Data',
           credTitle: "Radicata nella ricerca, testata nell'industria",
-          credText: "Opotus è guidata da Francesca Cecinati, la cui ricerca peer-reviewed su dati pluviometrici e incertezza nel settore idrico è stata pubblicata su riviste internazionali, e che ha passato anni ad applicare quei metodi all'interno dell'industria stessa.",
+          credText: "De Caires Data è guidata da Francesca Cecinati, la cui ricerca peer-reviewed su dati pluviometrici e incertezza nel settore idrico è stata pubblicata su riviste internazionali, e che ha passato anni ad applicare quei metodi all'interno dell'industria stessa.",
           cred1: 'Oltre 30 pubblicazioni peer-reviewed su riviste internazionali del settore idrico e ambientale',
           cred2: '8 anni di esperienza applicata con utility idriche e società di consulenza del settore',
           cred3: 'Competenza specialistica su dati pluviometrici, incertezza e modellazione idrologica',
@@ -321,12 +321,12 @@
         },
         about: {
           kicker: 'Chi siamo',
-          title: 'La persona dietro Opotus',
-          intro: "Opotus è uno studio di data science e AI con un'idea guida: i metodi avanzati sono utili solo quando qualcuno si prende il tempo di applicarli correttamente al tuo problema specifico.",
+          title: 'La persona dietro De Caires Data',
+          intro: "De Caires Data è uno studio di data science e AI con un'idea guida: i metodi avanzati sono utili solo quando qualcuno si prende il tempo di applicarli correttamente al tuo problema specifico.",
           bioTitle: 'Francesca Cecinati',
           bio1: 'Francesca è una data scientist con una carriera tra ricerca accademica e pratica industriale. Il suo lavoro peer-reviewed su dati e incertezza nel settore idrico è stato pubblicato su riviste internazionali, e da anni trasforma metodi di livello scientifico in risposte su cui le organizzazioni possono agire.',
-          bio2: "Opotus porta lo stesso rigore a una gamma più ampia di problemi: strategia AI e machine learning per organizzazioni di ogni settore, analisi specialistiche per l'acqua, e siti web e marketing potenziati dall'AI per le piccole imprese. Pubblici diversi, un unico standard di cura.",
-          bio3: 'Francesca lavora in inglese e italiano, e ogni progetto Opotus, di qualunque dimensione, riceve la sua attenzione diretta.',
+          bio2: "De Caires Data porta lo stesso rigore a una gamma più ampia di problemi: strategia AI e machine learning per organizzazioni di ogni settore, analisi specialistiche per l'acqua, e siti web e marketing potenziati dall'AI per le piccole imprese. Pubblici diversi, un unico standard di cura.",
+          bio3: 'Francesca lavora in inglese e italiano, e ogni progetto De Caires Data, di qualunque dimensione, riceve la sua attenzione diretta.',
           credTitle: 'Credenziali in sintesi',
           cred1: 'Background di ricerca a livello di dottorato in data science per il settore idrico',
           cred2: 'Pubblicazioni peer-reviewed su riviste internazionali',
@@ -364,7 +364,7 @@
     }
   };
 
-  var STORAGE_KEY = 'opotus-lang';
+  var STORAGE_KEY = 'decairesdata-lang';
 
   function savedLanguage() {
     try {

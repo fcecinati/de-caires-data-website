@@ -1,0 +1,16 @@
+# Sito statico: nessuna build, la radice del repository e' gia' il sito.
+[build]
+  publish = "."
+  command = ""
+
+# I marchi e le icone non cambiano mai nome: si possono tenere in cache a lungo.
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

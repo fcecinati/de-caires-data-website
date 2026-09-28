@@ -1,11 +1,11 @@
-/* Opotus: navigation, contact links, contact form */
+/* De Caires Data: navigation, contact links, contact form */
 
 /* ---- Contact details (single source of truth for the whole site) ----
-   PLACEHOLDER values: replace with the real Opotus email, LinkedIn URL
+   PLACEHOLDER values: replace with the real De Caires Data email, LinkedIn URL
    and WhatsApp number when Francesca confirms them. The WhatsApp number
    must be digits only, with country code, no plus sign or spaces. */
-var OPOTUS_CONTACT = {
-  email: 'hello@opotus.example',        /* PLACEHOLDER */
+var DE_CAIRES_DATA_CONTACT = {
+  email: 'hello@decairesdata.example',        /* PLACEHOLDER */
   linkedin: 'https://www.linkedin.com/', /* PLACEHOLDER */
   whatsapp: '000000000000'               /* PLACEHOLDER */
 };
@@ -45,15 +45,15 @@ var OPOTUS_CONTACT = {
     });
   }
 
-  /* ---- Wire contact links from OPOTUS_CONTACT ---- */
+  /* ---- Wire contact links from DE_CAIRES_DATA_CONTACT ---- */
   document.querySelectorAll('[data-contact]').forEach(function (el) {
     var kind = el.getAttribute('data-contact');
     if (kind === 'email') {
-      el.href = 'mailto:' + OPOTUS_CONTACT.email;
+      el.href = 'mailto:' + DE_CAIRES_DATA_CONTACT.email;
     } else if (kind === 'linkedin') {
-      el.href = OPOTUS_CONTACT.linkedin;
+      el.href = DE_CAIRES_DATA_CONTACT.linkedin;
     } else if (kind === 'whatsapp') {
-      el.href = 'https://wa.me/' + OPOTUS_CONTACT.whatsapp;
+      el.href = 'https://wa.me/' + DE_CAIRES_DATA_CONTACT.whatsapp;
     }
   });
 
@@ -74,7 +74,7 @@ var OPOTUS_CONTACT = {
       var message = document.getElementById('formMessage').value.trim();
 
       var lines = [];
-      lines.push('Hello Opotus,');
+      lines.push('Hello De Caires Data,');
       lines.push('');
       if (message) {
         lines.push(message);
@@ -92,7 +92,7 @@ var OPOTUS_CONTACT = {
 
     document.getElementById('sendEmail').addEventListener('click', function () {
       var msg = buildMessage();
-      window.location.href = 'mailto:' + OPOTUS_CONTACT.email +
+      window.location.href = 'mailto:' + DE_CAIRES_DATA_CONTACT.email +
         '?subject=' + encodeURIComponent(msg.subject) +
         '&body=' + encodeURIComponent(msg.body);
     });
@@ -100,7 +100,7 @@ var OPOTUS_CONTACT = {
     document.getElementById('sendWhatsApp').addEventListener('click', function () {
       var msg = buildMessage();
       window.open(
-        'https://wa.me/' + OPOTUS_CONTACT.whatsapp +
+        'https://wa.me/' + DE_CAIRES_DATA_CONTACT.whatsapp +
         '?text=' + encodeURIComponent(msg.subject + '\n\n' + msg.body),
         '_blank',
         'noopener'
