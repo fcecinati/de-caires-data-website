@@ -1,13 +1,14 @@
 /* De Caires Data: navigation, contact links, contact form */
 
 /* ---- Contact details (single source of truth for the whole site) ----
-   PLACEHOLDER values: replace with the real De Caires Data email, LinkedIn URL
-   and WhatsApp number when Francesca confirms them. The WhatsApp number
-   must be digits only, with country code, no plus sign or spaces. */
+   The WhatsApp number is digits only, with country code, no plus sign or
+   spaces: +44 7918 534620 -> 447918534620. Note this is a different number
+   from the one on the Classics site, which is Umberto's.
+   The shared info@ address is in use until a De Caires Data mailbox exists. */
 var DE_CAIRES_DATA_CONTACT = {
-  email: 'hello@decairesdata.example',        /* PLACEHOLDER */
-  linkedin: 'https://www.linkedin.com/', /* PLACEHOLDER */
-  whatsapp: '000000000000'               /* PLACEHOLDER */
+  email: 'info@decairesclassics.com',
+  linkedin: 'https://www.linkedin.com/', /* PLACEHOLDER: URL del profilo */
+  whatsapp: '447918534620'
 };
 
 (function () {
