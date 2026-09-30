@@ -3,8 +3,7 @@
 Running list of material still required to finish the site. Tick items off as they arrive.
 
 ## Branding
-Rebranded from Opotus to De Caires Data: one company, one brand, across both
-the classics and the data side. The visual language is the De Caires Classics
+One company, one brand, across both the classics and the data side. The visual language is the De Caires Classics
 house style inverted — black and gold on white, instead of cream and gold on
 black — with the same Cormorant Garamond / DM Sans pairing and the same gold
 hairlines. The coral accent is gone entirely.
@@ -34,7 +33,6 @@ hairlines. The coral accent is gone entirely.
   against a site that is otherwise black-on-white. The PNG icon set is wired
   up instead. Worth regenerating the `.ico` from the black-on-white PNGs if
   you want a single-file favicon, since `.ico` still has the widest support.
-- [ ] `images/opotus-logo.png` is now unreferenced and can be deleted
 
 ## Copy and facts
 - [ ] Review of the one-line value proposition on the homepage
