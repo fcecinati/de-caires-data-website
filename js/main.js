@@ -7,7 +7,7 @@
    The shared info@ address is in use until a De Caires Data mailbox exists. */
 var DE_CAIRES_DATA_CONTACT = {
   email: 'info@decairesclassics.com',
-  linkedin: 'https://www.linkedin.com/', /* PLACEHOLDER: URL del profilo */
+  linkedin: 'https://www.linkedin.com/in/francesca-cecinati-83673858/',
   whatsapp: '447918534620'
 };
 

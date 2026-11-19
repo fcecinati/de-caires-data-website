@@ -41,16 +41,18 @@ hairlines. The coral accent is gone entirely.
 - [ ] Bio and CV highlights for the About page
 - [ ] Publication list (or a link to Google Scholar / ORCID)
 - [ ] Case study material for consulting and water pages (anonymised is fine)
-- [ ] Portfolio screenshots and links for the digital page (De Caires Classics and others)
+- [x] Portfolio cards on the digital page: Harmony Home, Artesia Smart Marketing Engine (training podcasts are on the consulting page)
 
 ## Contact details
 - [ ] De Caires Data email address
-- [ ] LinkedIn URL
+- [x] LinkedIn URL
 - [ ] WhatsApp number for the wa.me link
 
 ## Images
 - [x] Photo of Francesca for the About page (`images/francesca.png`)
-- [ ] Portfolio screenshot(s) of De Caires Classics (and any other sites) for the digital.html "Recent work" cards
+- [x] Artesia Smart Marketing Engine picture (`images/smart-marketing-engine.png`, original in `images/Raw/`)
+- [x] Training podcasts photo (`images/training-podcasts.jpg`): headphones by Nilo Velez, WordPress Photo Directory, CC0 (no attribution required). Source: https://wordpress.org/photos/photo/18766603c1/
+- [x] Gold trading photo (`images/gold-trading.jpg`): gold bullion bars by Stevebidmead (via Pixabay), Wikimedia Commons, CC0 1.0 (no attribution required). Source: https://commons.wikimedia.org/wiki/File:Gold_bullion_bars.jpg
 - [ ] Optional: sector/project photos for the water and consulting pages, if you want something more concrete than the current text-only layout there
 - [ ] Any project or sector photos (drop originals in images/Raw/)
 
