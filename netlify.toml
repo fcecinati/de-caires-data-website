@@ -3,6 +3,32 @@
   publish = "."
   command = ""
 
+# Un solo sito per Google: decairesdata.it (con o senza www) rimanda alla stessa
+# pagina su decairesdata.com, in italiano (?lang=it, letto da js/i18n.js).
+[[redirects]]
+  from = "https://decairesdata.it/*"
+  to = "https://decairesdata.com/:splat?lang=it"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://decairesdata.it/*"
+  to = "https://decairesdata.com/:splat?lang=it"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.decairesdata.it/*"
+  to = "https://decairesdata.com/:splat?lang=it"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.decairesdata.it/*"
+  to = "https://decairesdata.com/:splat?lang=it"
+  status = 301
+  force = true
+
 # I marchi e le icone non cambiano mai nome: si possono tenere in cache a lungo.
 [[headers]]
   for = "/images/*"

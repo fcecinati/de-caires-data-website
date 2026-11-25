@@ -1,9 +1,12 @@
 /* De Caires Data: i18next setup and translations.
    All translations are embedded here so the site works on any static host.
-   Default language is picked from the domain (decairesdata.it -> Italian,
-   everything else, including decairesdata.com, defaults to English); a manual
-   EN | IT toggle in the nav overrides that and is remembered via
-   localStorage for later visits.
+   Language is picked, in order, from:
+   1. a ?lang=it / ?lang=en in the URL (decairesdata.it redirects to
+      decairesdata.com/...?lang=it, see netlify.toml), which is also remembered;
+   2. the visitor's last choice, remembered via localStorage;
+   3. the domain (a .it hostname -> Italian, anything else -> English).
+   The EN | IT toggle in the nav changes the language, remembers it, and keeps
+   any ?lang= in the address bar in step so a reload shows the same language.
    NOTE: the Italian strings are drafts for Francesca to review. */
 
 (function () {
@@ -376,6 +379,20 @@
 
   var STORAGE_KEY = 'decairesdata-lang';
 
+  function urlLanguage() {
+    var lang = (new URLSearchParams(window.location.search).get('lang') || '').toLowerCase();
+    return resources.hasOwnProperty(lang) ? lang : null;
+  }
+
+  /* After the toggle, keep an existing ?lang= in step, otherwise a reload
+     would switch back to the language in the URL. */
+  function syncUrlLanguage(lang) {
+    if (!urlLanguage() || !window.history.replaceState) return;
+    var url = new URL(window.location.href);
+    url.searchParams.set('lang', lang);
+    window.history.replaceState(null, '', url.toString());
+  }
+
   function savedLanguage() {
     try {
       return localStorage.getItem(STORAGE_KEY);
@@ -420,9 +437,14 @@
     });
   }
 
+  /* Remember a language arriving in the URL, so the site's own links (which
+     carry no ?lang=) stay in that language as the visitor moves around. */
+  var linkedLanguage = urlLanguage();
+  if (linkedLanguage) saveLanguage(linkedLanguage);
+
   i18next.init(
     {
-      lng: savedLanguage() || domainDefaultLanguage(),
+      lng: linkedLanguage || savedLanguage() || domainDefaultLanguage(),
       fallbackLng: 'en',
       resources: resources
     },
@@ -435,6 +457,7 @@
     btn.addEventListener('click', function () {
       var lang = btn.getAttribute('data-lang');
       saveLanguage(lang);
+      syncUrlLanguage(lang);
       i18next.changeLanguage(lang, applyTranslations);
     });
   });
